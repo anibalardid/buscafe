@@ -1,4 +1,4 @@
-var app = angular.module('caffeinehit.services', []);
+var app = angular.module('buscafe.services', []);
 
 app.service("YelpService", function ($q, $http, $ionicLoading, $cordovaGeolocation, $ionicPopup) {
 	var self = {

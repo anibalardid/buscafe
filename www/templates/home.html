@@ -1,0 +1,59 @@
+<ion-view>
+<ion-nav-title>
+    <h1 class="title">
+        <img src='img/icon1.png' />
+        <span>BusCafé</span>
+    </h1>
+</ion-nav-title>
+<ion-pane>
+    <ion-content>
+
+        <ion-refresher
+                pulling-text="Refresh..."
+                on-refresh="doRefresh()">
+        </ion-refresher>
+
+        <ion-list>
+            <ion-item ng-repeat="cafe in yelp.results"
+                      class="item-thumbnail-left">
+                <img ng-src="{{cafe.image_url}}">
+                <h2>{{cafe.name}}</h2>
+
+                <p>
+                    <span>
+                        <i class="ion ion-ios-navigate"></i>
+                        {{cafe.distance}}</span>
+                </p>
+                <p ng-click="getDirections(cafe)">
+                    <i class="ion ion-ios-location"></i>
+                    {{cafe.location.display_address | join:", "}}
+                </p>
+                <p>
+                    <span>
+                        <i class="ion ion-star"></i>
+                        {{cafe.rating}}</span>
+                    <span>
+                        <i class="ion ion-person"></i>
+                        {{cafe.review_count}}</span>
+                </p>
+
+                <ion-option-button class="button-positive"
+                        ng-click="getDirections(cafe)">
+                    <i class="ion ion-map"></i>&nbsp;Cómo llegar
+                </ion-option-button>
+
+            </ion-item>
+        </ion-list>
+
+        <ion-infinite-scroll
+                ng-if="yelp.hasMore"
+                immediate-check="false"
+                on-infinite="loadMore()">
+
+        </ion-infinite-scroll>
+
+
+
+    </ion-content>
+</ion-pane>
+</ion-view>

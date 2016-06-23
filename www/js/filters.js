@@ -1,4 +1,4 @@
-var app = angular.module('caffeinehit.filters', []);
+var app = angular.module('buscafe.filters', []);
 
 app.filter("join", function () {
     return function (arr, sep) {

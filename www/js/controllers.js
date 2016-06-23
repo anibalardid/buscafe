@@ -1,6 +1,6 @@
-var app = angular.module('caffeinehit.controllers', []);
+var app = angular.module('buscafe.controllers', []);
 
-app.controller("YelpController", function ($scope, YelpService, $ionicLoading) {
+app.controller("BuscafeController", function ($scope, YelpService, $ionicLoading) {
     $ionicLoading.show();
     $scope.yelp = YelpService;
 

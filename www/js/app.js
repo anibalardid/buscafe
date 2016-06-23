@@ -1,27 +1,56 @@
-var app = angular.module('caffeinehit', [
-	'ionic',
-	'ngCordova',
-	'caffeinehit.controllers',
-	'caffeinehit.services',
-	'caffeinehit.filters'
-]);
+// Ionic Starter App
 
-app.run(function ($ionicPlatform) {
-	$ionicPlatform.ready(function () {
-		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-		// for form inputs)
-		if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-			cordova.plugins.Keyboard.disableScroll(true);
+angular.module('buscafe', [
+  'ionic',
+  'ngCordova',
+  'buscafe.controllers',
+  'buscafe.services',
+  'buscafe.filters'
+  ])
 
-		}
-		if (window.StatusBar) {
-			// org.apache.cordova.statusbar required
-			StatusBar.styleDefault();
-		}
-	});
-});
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
 
-app.config(function ($httpProvider) {
-	$httpProvider.defaults.headers.common['Authorization'] = 'Token 1eb60143ffdb96dd6d0e8d56f25c27a6bb01df53';
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+})
+
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+
+  .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html'
+  })
+
+  .state('app.home', {
+    url: '/home',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+        controller: 'BuscafeController'
+      }
+    }
+  })
+
+  .state('app.about', {
+    url: '/about',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/about.html'
+      }
+    }
+  });
+  
+  $urlRouterProvider.otherwise('/app/home');
 });

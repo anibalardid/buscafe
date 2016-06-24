@@ -15,9 +15,19 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+$stable:                          #FFFEDF !default;
+$balanced:                        #DFBA69 !default;
+$assertive:                       #5A2E2E !default;
+$dark:                            #2A2C31 !default;
+
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+$headings-font-family: 'Raleway', serif;
+$font-family-base: 'Raleway', serif;
+
+
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-

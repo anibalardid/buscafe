@@ -36,7 +36,7 @@ angular.module('buscafe', [
   .state('app.home', {
     url: '/home',
     views: {
-      'menuContent': {
+      'home': {
         templateUrl: 'templates/home.html',
         controller: 'BuscafeController'
       }
@@ -46,7 +46,7 @@ angular.module('buscafe', [
   .state('app.about', {
     url: '/about',
     views: {
-      'menuContent': {
+      'about': {
         templateUrl: 'templates/about.html'
       }
     }

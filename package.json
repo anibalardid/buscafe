@@ -1,7 +1,7 @@
 {
-  "name": "caffeinehit-list",
+  "name": "BusCafe",
   "version": "1.1.1",
-  "description": "caffeinehit-list: An Ionic project",
+  "description": "BusCafe",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -18,11 +18,11 @@
     "cordova-plugin-device",
     "cordova-plugin-console",
     "cordova-plugin-whitelist",
-    "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
     "cordova-plugin-geolocation",
-    "uk.co.workingedge.phonegap.plugin.launchnavigator"
+    "uk.co.workingedge.phonegap.plugin.launchnavigator",
+    "cordova-plugin-splashscreen"
   ],
   "cordovaPlatforms": [
     "android"

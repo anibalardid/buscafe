@@ -24,8 +24,14 @@ angular.module('buscafe', [
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $stateProvider
+
+  .state('intro', {
+    url: '/intro',
+    templateUrl: 'templates/intro.html',
+    controller: 'IntroCtrl'
+  })
 
   .state('app', {
     url: '/app',
@@ -52,5 +58,7 @@ angular.module('buscafe', [
     }
   });
   
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/intro');
+
+  $ionicConfigProvider.navBar.alignTitle('center');
 });

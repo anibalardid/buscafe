@@ -1,3 +1,38 @@
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+.slider {
+  height: 100%;
+}
+.slider-slide {
+  padding-top: 80px;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+
+#logo {
+  margin: 30px 0px;
+}
+
+#list {
+  margin: 30px auto;
+  font-size: 20px;
+}
+
+#list p {
+  text-align: left;
+  font-size: 14px;
+  margin: 10px 15px;
+}
+
+.button.ng-hide{
+  display:none;
+}
+
 .bar-header .title img {
     height: 24px;
     vertical-align: middle;

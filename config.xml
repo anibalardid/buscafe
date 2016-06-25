@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.buscafe474305" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>buscafe</name>
+<widget id="com.anibalardid.buscafe" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>BusCafe</name>
     <description>
-        Busqueda de cafeterias cercanas.
+        Buscador de cafeterias cercanas.
     </description>
     <author email="anibalardid@gmail.com" href="http://ardid.com.ar/">
         Anibal Ardid
@@ -14,7 +14,7 @@
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="SplashScreenDelay" value="2000"/>
     <preference name="FadeSplashScreenDuration" value="1"/>
-    <preference name="android-minSdkVersion" value="16"/>
+    <preference name="android-minSdkVersion" value="21"/>
     <preference name="BackupWebStorage" value="none"/>
     <preference name="SplashScreen" value="screen"/>
     <feature name="StatusBar">

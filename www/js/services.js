@@ -46,6 +46,8 @@ app.service("YelpService", function ($q, $http, $ionicLoading, $cordovaGeolocati
 									self.hasMore = false;
 								} else {
 									angular.forEach(data.businesses, function (business) {
+										if (!business.image_url)
+											business.image_url = "img/no_thumb.jpg";
 										self.results.push(business);
 									});
 								}

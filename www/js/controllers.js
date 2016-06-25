@@ -1,8 +1,34 @@
 var app = angular.module('buscafe.controllers', []);
 
-app.controller("BuscafeController", function ($scope, YelpService, $ionicLoading) {
+app.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
+    var openhome = window.localStorage.getItem("openhome");
+
+    if(openhome == 1) {
+        $state.go('app.home');
+    }
+
+    // Called to navigate to the main app
+    $scope.startApp = function() {
+        $state.go('app.home');
+    };
+    $scope.next = function() {
+        $ionicSlideBoxDelegate.next();
+    };
+    $scope.previous = function() {
+        $ionicSlideBoxDelegate.previous();
+    };
+
+    // Called each time the slide changes
+    $scope.slideChanged = function(index) {
+        $scope.slideIndex = index;
+    };
+});
+
+app.controller("BuscafeController", function ($scope, $state, YelpService, $ionicLoading, $ionicPlatform) {
     $ionicLoading.show();
     $scope.yelp = YelpService;
+
+    window.localStorage.setItem("openhome", "1");
 
     $scope.doRefresh = function () {
         if (!$scope.yelp.isLoading) {
@@ -35,24 +61,6 @@ app.controller("BuscafeController", function ($scope, YelpService, $ionicLoading
 
         launchnavigator.navigate(destination, source);
     };
+
 });
 
-app.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
-    console.log('test');
-
-    // Called to navigate to the main app
-    $scope.startApp = function() {
-        $state.go('app.home');
-    };
-    $scope.next = function() {
-        $ionicSlideBoxDelegate.next();
-    };
-    $scope.previous = function() {
-        $ionicSlideBoxDelegate.previous();
-    };
-
-    // Called each time the slide changes
-    $scope.slideChanged = function(index) {
-        $scope.slideIndex = index;
-    };
-});

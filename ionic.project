@@ -1,4 +1,11 @@
 {
   "name": "buscafe",
-  "app_id": ""
+  "app_id": "b0cfd618",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
 }

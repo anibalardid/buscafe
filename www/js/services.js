@@ -68,6 +68,9 @@ app.service("YelpService", function ($q, $http, $ionicLoading, $cordovaGeolocati
 						$ionicPopup.alert({
 							'title':'Por favor encienda la geolocalización',
 							'template': "Parece que tienes el gps desacticado. Por favor enciendalo y vuelva a ingresar a la aplicación."
+						}).then(function(){
+							//navigator.app.exitApp();
+							ionic.Platform.exitApp();
 						});
 					})
 			});
